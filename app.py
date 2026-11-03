@@ -16,7 +16,7 @@ def load_brain():
 
 @st.cache_data
 def load_data():
-    return pd.read_csv('exoTrain.csv')
+   return pd.read_csv('sample_stars.csv')
 
 try:
     model = load_brain()
@@ -25,7 +25,7 @@ try:
     # Sidebar UI
     st.sidebar.header("Mission Control")
     st.sidebar.markdown("Select a star system from the NASA database to analyze.")
-    star_index = st.sidebar.number_input("Star ID (0 to 5086):", min_value=0, max_value=len(df)-1, value=3)
+    star_index = st.sidebar.number_input("Star ID:", min_value=0, max_value=49, value=3)
     
     # Data prep for the selected star
     star_data = df.iloc[star_index]
