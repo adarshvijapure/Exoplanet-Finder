@@ -16,8 +16,7 @@ def load_brain():
 
 @st.cache_data
 def load_data():
-   return pd.read_csv('sample_stars.csv')
-
+   return pd.read_csv('exoTrain.zip', compression='zip')
 try:
     model = load_brain()
     df = load_data()
