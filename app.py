@@ -24,7 +24,7 @@ try:
     # Sidebar UI
     st.sidebar.header("Mission Control")
     st.sidebar.markdown("Select a star system from the NASA database to analyze.")
-    star_index = st.sidebar.number_input("Star ID:", min_value=0, max_value=49, value=3)
+    star_index = st.sidebar.number_input("Star ID:", min_value=0, max_value=len(df)-1, value=3)
     
     # Data prep for the selected star
     star_data = df.iloc[star_index]
